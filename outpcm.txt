@@ -1,0 +1,331 @@
+# --------------------------------------------------------------------------------
+# FAULTSIM (v0.1 alpha) - A Fast, Configurable Memory Resilience Simulator
+# (c) 2013-2015 Advanced Micro Devices Inc.
+# --------------------------------------------------------------------------------
+
+The selected config file is: configs/PCM.ini
+FaultDomain name:MODULE0.DRAM0
+# -------------------------------------------------------------------
+# DRAMDomain(MODULE0.DRAM0)
+# ranks 1
+# banks 8
+# rows 32768
+# cols 16384
+# bitwidth 4
+# gbits 16.000
+# -------------------------------------------------------------------
+FaultDomain name:MODULE0.DRAM1
+# -------------------------------------------------------------------
+# DRAMDomain(MODULE0.DRAM1)
+# ranks 1
+# banks 8
+# rows 32768
+# cols 16384
+# bitwidth 4
+# gbits 16.000
+# -------------------------------------------------------------------
+FaultDomain name:MODULE0.DRAM2
+# -------------------------------------------------------------------
+# DRAMDomain(MODULE0.DRAM2)
+# ranks 1
+# banks 8
+# rows 32768
+# cols 16384
+# bitwidth 4
+# gbits 16.000
+# -------------------------------------------------------------------
+FaultDomain name:MODULE0.DRAM3
+# -------------------------------------------------------------------
+# DRAMDomain(MODULE0.DRAM3)
+# ranks 1
+# banks 8
+# rows 32768
+# cols 16384
+# bitwidth 4
+# gbits 16.000
+# -------------------------------------------------------------------
+FaultDomain name:MODULE0.DRAM4
+# -------------------------------------------------------------------
+# DRAMDomain(MODULE0.DRAM4)
+# ranks 1
+# banks 8
+# rows 32768
+# cols 16384
+# bitwidth 4
+# gbits 16.000
+# -------------------------------------------------------------------
+FaultDomain name:MODULE0.DRAM5
+# -------------------------------------------------------------------
+# DRAMDomain(MODULE0.DRAM5)
+# ranks 1
+# banks 8
+# rows 32768
+# cols 16384
+# bitwidth 4
+# gbits 16.000
+# -------------------------------------------------------------------
+FaultDomain name:MODULE0.DRAM6
+# -------------------------------------------------------------------
+# DRAMDomain(MODULE0.DRAM6)
+# ranks 1
+# banks 8
+# rows 32768
+# cols 16384
+# bitwidth 4
+# gbits 16.000
+# -------------------------------------------------------------------
+FaultDomain name:MODULE0.DRAM7
+# -------------------------------------------------------------------
+# DRAMDomain(MODULE0.DRAM7)
+# ranks 1
+# banks 8
+# rows 32768
+# cols 16384
+# bitwidth 4
+# gbits 16.000
+# -------------------------------------------------------------------
+FaultDomain name:MODULE0.DRAM8
+# -------------------------------------------------------------------
+# DRAMDomain(MODULE0.DRAM8)
+# ranks 1
+# banks 8
+# rows 32768
+# cols 16384
+# bitwidth 4
+# gbits 16.000
+# -------------------------------------------------------------------
+FaultDomain name:MODULE0.DRAM9
+# -------------------------------------------------------------------
+# DRAMDomain(MODULE0.DRAM9)
+# ranks 1
+# banks 8
+# rows 32768
+# cols 16384
+# bitwidth 4
+# gbits 16.000
+# -------------------------------------------------------------------
+FaultDomain name:MODULE0.DRAM10
+# -------------------------------------------------------------------
+# DRAMDomain(MODULE0.DRAM10)
+# ranks 1
+# banks 8
+# rows 32768
+# cols 16384
+# bitwidth 4
+# gbits 16.000
+# -------------------------------------------------------------------
+FaultDomain name:MODULE0.DRAM11
+# -------------------------------------------------------------------
+# DRAMDomain(MODULE0.DRAM11)
+# ranks 1
+# banks 8
+# rows 32768
+# cols 16384
+# bitwidth 4
+# gbits 16.000
+# -------------------------------------------------------------------
+FaultDomain name:MODULE0.DRAM12
+# -------------------------------------------------------------------
+# DRAMDomain(MODULE0.DRAM12)
+# ranks 1
+# banks 8
+# rows 32768
+# cols 16384
+# bitwidth 4
+# gbits 16.000
+# -------------------------------------------------------------------
+FaultDomain name:MODULE0.DRAM13
+# -------------------------------------------------------------------
+# DRAMDomain(MODULE0.DRAM13)
+# ranks 1
+# banks 8
+# rows 32768
+# cols 16384
+# bitwidth 4
+# gbits 16.000
+# -------------------------------------------------------------------
+FaultDomain name:MODULE0.DRAM14
+# -------------------------------------------------------------------
+# DRAMDomain(MODULE0.DRAM14)
+# ranks 1
+# banks 8
+# rows 32768
+# cols 16384
+# bitwidth 4
+# gbits 16.000
+# -------------------------------------------------------------------
+FaultDomain name:MODULE0.DRAM15
+# -------------------------------------------------------------------
+# DRAMDomain(MODULE0.DRAM15)
+# ranks 1
+# banks 8
+# rows 32768
+# cols 16384
+# bitwidth 4
+# gbits 16.000
+# -------------------------------------------------------------------
+FaultDomain name:MODULE1.DRAM0
+# -------------------------------------------------------------------
+# DRAMDomain(MODULE1.DRAM0)
+# ranks 1
+# banks 8
+# rows 32768
+# cols 16384
+# bitwidth 4
+# gbits 16.000
+# -------------------------------------------------------------------
+FaultDomain name:MODULE1.DRAM1
+# -------------------------------------------------------------------
+# DRAMDomain(MODULE1.DRAM1)
+# ranks 1
+# banks 8
+# rows 32768
+# cols 16384
+# bitwidth 4
+# gbits 16.000
+# -------------------------------------------------------------------
+FaultDomain name:MODULE1.DRAM2
+# -------------------------------------------------------------------
+# DRAMDomain(MODULE1.DRAM2)
+# ranks 1
+# banks 8
+# rows 32768
+# cols 16384
+# bitwidth 4
+# gbits 16.000
+# -------------------------------------------------------------------
+FaultDomain name:MODULE1.DRAM3
+# -------------------------------------------------------------------
+# DRAMDomain(MODULE1.DRAM3)
+# ranks 1
+# banks 8
+# rows 32768
+# cols 16384
+# bitwidth 4
+# gbits 16.000
+# -------------------------------------------------------------------
+FaultDomain name:MODULE1.DRAM4
+# -------------------------------------------------------------------
+# DRAMDomain(MODULE1.DRAM4)
+# ranks 1
+# banks 8
+# rows 32768
+# cols 16384
+# bitwidth 4
+# gbits 16.000
+# -------------------------------------------------------------------
+FaultDomain name:MODULE1.DRAM5
+# -------------------------------------------------------------------
+# DRAMDomain(MODULE1.DRAM5)
+# ranks 1
+# banks 8
+# rows 32768
+# cols 16384
+# bitwidth 4
+# gbits 16.000
+# -------------------------------------------------------------------
+FaultDomain name:MODULE1.DRAM6
+# -------------------------------------------------------------------
+# DRAMDomain(MODULE1.DRAM6)
+# ranks 1
+# banks 8
+# rows 32768
+# cols 16384
+# bitwidth 4
+# gbits 16.000
+# -------------------------------------------------------------------
+FaultDomain name:MODULE1.DRAM7
+# -------------------------------------------------------------------
+# DRAMDomain(MODULE1.DRAM7)
+# ranks 1
+# banks 8
+# rows 32768
+# cols 16384
+# bitwidth 4
+# gbits 16.000
+# -------------------------------------------------------------------
+FaultDomain name:MODULE1.DRAM8
+# -------------------------------------------------------------------
+# DRAMDomain(MODULE1.DRAM8)
+# ranks 1
+# banks 8
+# rows 32768
+# cols 16384
+# bitwidth 4
+# gbits 16.000
+# -------------------------------------------------------------------
+FaultDomain name:MODULE1.DRAM9
+# -------------------------------------------------------------------
+# DRAMDomain(MODULE1.DRAM9)
+# ranks 1
+# banks 8
+# rows 32768
+# cols 16384
+# bitwidth 4
+# gbits 16.000
+# -------------------------------------------------------------------
+FaultDomain name:MODULE1.DRAM10
+# -------------------------------------------------------------------
+# DRAMDomain(MODULE1.DRAM10)
+# ranks 1
+# banks 8
+# rows 32768
+# cols 16384
+# bitwidth 4
+# gbits 16.000
+# -------------------------------------------------------------------
+FaultDomain name:MODULE1.DRAM11
+# -------------------------------------------------------------------
+# DRAMDomain(MODULE1.DRAM11)
+# ranks 1
+# banks 8
+# rows 32768
+# cols 16384
+# bitwidth 4
+# gbits 16.000
+# -------------------------------------------------------------------
+FaultDomain name:MODULE1.DRAM12
+# -------------------------------------------------------------------
+# DRAMDomain(MODULE1.DRAM12)
+# ranks 1
+# banks 8
+# rows 32768
+# cols 16384
+# bitwidth 4
+# gbits 16.000
+# -------------------------------------------------------------------
+FaultDomain name:MODULE1.DRAM13
+# -------------------------------------------------------------------
+# DRAMDomain(MODULE1.DRAM13)
+# ranks 1
+# banks 8
+# rows 32768
+# cols 16384
+# bitwidth 4
+# gbits 16.000
+# -------------------------------------------------------------------
+FaultDomain name:MODULE1.DRAM14
+# -------------------------------------------------------------------
+# DRAMDomain(MODULE1.DRAM14)
+# ranks 1
+# banks 8
+# rows 32768
+# cols 16384
+# bitwidth 4
+# gbits 16.000
+# -------------------------------------------------------------------
+FaultDomain name:MODULE1.DRAM15
+# -------------------------------------------------------------------
+# DRAMDomain(MODULE1.DRAM15)
+# ranks 1
+# banks 8
+# rows 32768
+# cols 16384
+# bitwidth 4
+# gbits 16.000
+# -------------------------------------------------------------------
+# ===================================================================
+# SIMULATION STARTS
+# ===================================================================
+
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
