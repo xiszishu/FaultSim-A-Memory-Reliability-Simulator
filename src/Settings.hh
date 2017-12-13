@@ -26,12 +26,10 @@ public:
 	bool debug; 			// TODO document
 	uint64_t output_bucket_s; // Seconds per output histogram bucket
 
-<<<<<<< HEAD
     uint turning_point;//xiao: turning point
   uint type;// xiao:memory type:0-DRAM, 1-PCM
-  uint module; //xiao:number of modules 
-=======
->>>>>>> cb3350b8a1ee2cc041e843e0d19ff5fbb07790a7
+  uint module; //xiao:number of modules
+    
 	// Memory system physical configuration
 	int organization;	// Which topology to simulate e.g. DIMM or 3D stack
 	// Settings for all DRAMs

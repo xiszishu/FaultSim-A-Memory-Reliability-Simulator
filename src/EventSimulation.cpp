@@ -37,13 +37,8 @@ public:
 
 
 EventSimulation::EventSimulation( uint64_t interval_t, uint64_t scrub_interval_t, double fit_factor_t , uint test_mode_t,
-<<<<<<< HEAD
                                   bool debug_mode_t, bool cont_running_t, uint64_t output_bucket_t, uint64_t turning_point_t)
     : Simulation( interval_t, scrub_interval_t, fit_factor_t, test_mode_t, debug_mode_t, cont_running_t, output_bucket_t, turning_point_t)
-=======
-									bool debug_mode_t, bool cont_running_t, uint64_t output_bucket_t)
-: Simulation( interval_t, scrub_interval_t, fit_factor_t, test_mode_t, debug_mode_t, cont_running_t, output_bucket_t)
->>>>>>> cb3350b8a1ee2cc041e843e0d19ff5fbb07790a7
 {
 }
 
@@ -64,11 +59,8 @@ uint64_t EventSimulation::runOne( uint64_t max_s, int verbose, uint64_t bin_leng
 	list<FaultDomain*> *pChips = m_domains.front()->getChildren();
 
 	int err_inserted = 0;
-<<<<<<< HEAD
   //xiao:reset FIT for runOne
-=======
 
->>>>>>> cb3350b8a1ee2cc041e843e0d19ff5fbb07790a7
 	int devices = 0;
 	for( list<FaultDomain*>::iterator it1 = pChips->begin(); it1 != pChips->end(); it1++ )
 	{
@@ -77,7 +69,7 @@ uint64_t EventSimulation::runOne( uint64_t max_s, int verbose, uint64_t bin_leng
 		for(int errtype=0; errtype<DRAM_MAX*2; errtype++)
 		{
 			double currtime=0;
-<<<<<<< HEAD
+
       bool changed=0;
       double target=turning_point;
 			while(currtime <= ((double)max_s))
@@ -102,11 +94,9 @@ uint64_t EventSimulation::runOne( uint64_t max_s, int verbose, uint64_t bin_leng
         //if (currtime>(double)turning_point) changed=1;
         //if (changed) printf("%.3f %.3f\n",currtime,(double)turning_point);
         //if (changed) pD->update_FIT(((double)turning_point-currtime),m_fit_factor);
-=======
-			while(currtime <= ((double)max_s)){
-				period = -1*log(pD->gen())*pD->hrs_per_fault[errtype] * (60 * 60); //Exponential interval in SECONDS
-				currtime += period;
->>>>>>> cb3350b8a1ee2cc041e843e0d19ff5fbb07790a7
+				//period = -1*log(pD->gen())*pD->hrs_per_fault[errtype] * (60 * 60); //Exponential interval in SECONDS
+				//currtime += period;
+
 				if(currtime <= max_s){
 					double timestamp = currtime;
 					FaultRange *fr = NULL;

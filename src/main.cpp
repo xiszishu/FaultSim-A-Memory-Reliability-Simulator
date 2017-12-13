@@ -11,13 +11,8 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 */
 
 #include "boost/program_options.hpp"
-<<<<<<< HEAD
 #include <iostream>
 #include <string>
-=======
-#include <iostream> 
-#include <string> 
->>>>>>> cb3350b8a1ee2cc041e843e0d19ff5fbb07790a7
 #include <cstring>
 
 #include "faultsim.hh"
@@ -36,11 +31,7 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 #include "Settings.hh"
 
 void printBanner( void );
-<<<<<<< HEAD
 GroupDomain* genModuleDIMM(uint num);
-=======
-GroupDomain* genModuleDIMM( void );
->>>>>>> cb3350b8a1ee2cc041e843e0d19ff5fbb07790a7
 GroupDomain* genModule3D( void );
 
 namespace {
@@ -48,11 +39,7 @@ const size_t ERROR_IN_COMMAND_LINE = 1;
 const size_t SUCCESS = 0;
 const size_t ERROR_UNHANDLED_EXCEPTION = 2;
 
-<<<<<<< HEAD
 } // namespace
-=======
-} // namespace 
->>>>>>> cb3350b8a1ee2cc041e843e0d19ff5fbb07790a7
 
 void printBanner( void )
 {
@@ -117,7 +104,6 @@ int main(int argc, char** argv) {
     delete [] config_opt;
 
     // Build the physical memory organization and attach ECC scheme /////
-<<<<<<< HEAD
     GroupDomain **module = (GroupDomain **)calloc(settings.module,sizeof(GroupDomain *));
     //module=(module **)calloc(settings.module,sizeof(module *));
     //GroupDomain *module1 = NULL;
@@ -130,14 +116,6 @@ int main(int argc, char** argv) {
     } else if( settings.organization == MO_3D ) {
       for (int i=0;i<settings.module;i++)
     	module[i] = genModule3D();
-=======
-    GroupDomain *module = NULL;
-
-    if( settings.organization == MO_DIMM ) {
-    	module = genModuleDIMM();
-    } else if( settings.organization == MO_3D ) {
-    	module = genModule3D();
->>>>>>> cb3350b8a1ee2cc041e843e0d19ff5fbb07790a7
     }
 
     // Configure simulator ///////////////////////////////////////////////
@@ -158,17 +136,10 @@ int main(int argc, char** argv) {
 
     if( settings.sim_mode == 1 ) {
     	sim_temp = (new Simulation( settings.interval_s, settings.scrub_s, settings.fit_factor, settings.test_mode,
-<<<<<<< HEAD
                                   settings.debug,settings.continue_running, settings.output_bucket_s,settings.turning_point )); //xiao:add turning_point
     } else if( settings.sim_mode == 2 ) {
     	sim_temp = (new EventSimulation( settings.interval_s, settings.scrub_s, settings.fit_factor, settings.test_mode,
                                        settings.debug,settings.continue_running, settings.output_bucket_s, settings.turning_point));
-=======
-    			                    settings.debug,settings.continue_running, settings.output_bucket_s ));
-    } else if( settings.sim_mode == 2 ) {
-    	sim_temp = (new EventSimulation( settings.interval_s, settings.scrub_s, settings.fit_factor, settings.test_mode,
-    								settings.debug,settings.continue_running, settings.output_bucket_s ));
->>>>>>> cb3350b8a1ee2cc041e843e0d19ff5fbb07790a7
     } else {
     	cout << "ERROR: Invalid sim_mode option (must be 1 (interval-based) or 2 (event-driven))\n";
     	exit(0);
@@ -177,13 +148,9 @@ int main(int argc, char** argv) {
     Simulation &sim = *sim_temp;
 
     // Run simulator //////////////////////////////////////////////////
-<<<<<<< HEAD
     for (int i=0;i<settings.module;i++)
     sim.addDomain( module[i] );    // register the top-level memory object with the simulation engine
     //sim.addDomain( module2 );
-=======
-    sim.addDomain( module );    // register the top-level memory object with the simulation engine
->>>>>>> cb3350b8a1ee2cc041e843e0d19ff5fbb07790a7
     sim.init( settings.max_s );	// one-time set-up that does FIT rate scaling based on interval
     sim.simulate( settings.max_s, settings.n_sims, settings.verbose, settings.output_file);
     sim.printStats();
@@ -194,7 +161,7 @@ int main(int argc, char** argv) {
 /*
  * Simulate a DIMM module
  */
-<<<<<<< HEAD
+
 // char *int2char(int x)
 // {
 //     int i;
@@ -208,17 +175,13 @@ int main(int argc, char** argv) {
 //     return a;
 // }
 GroupDomain* genModuleDIMM(uint num)
-=======
-
-GroupDomain* genModuleDIMM( void )
->>>>>>> cb3350b8a1ee2cc041e843e0d19ff5fbb07790a7
 {
 	GroupDomain *dimm0;
 
 	// Create a DIMM or a CUBE
 	// settings.data_block_bits is the number of bits per transaction when you create a DIMM
 
-<<<<<<< HEAD
+
   //string
   char module_name[]="MODULE0";
   //char num1[]="0";
@@ -305,41 +268,6 @@ GroupDomain* genModuleDIMM( void )
         }
     }
     else assert(0);
-=======
-	dimm0 = new GroupDomain_dimm( "MODULE0", settings.chips_per_rank, settings.banks, settings.data_block_bits );
-
-	for( uint32_t i = 0; i < settings.chips_per_rank; i++ ) {
-		char buf[20];
-		sprintf( buf, "MODULE0.DRAM%d", i );
-		DRAMDomain *dram0 = new DRAMDomain( buf, settings.chip_bus_bits, settings.ranks, settings.banks, settings.rows, settings.cols );
-
-		if( settings.faultmode == FM_UNIFORM_BIT ) {
-			if( settings.enable_transient ) dram0->setFIT( DRAM_1BIT, 1, 33.05 );
-			if( settings.enable_permanent ) dram0->setFIT( DRAM_1BIT, 0, 33.05 );
-		} else if( settings.faultmode == FM_JAGUAR ) {
-			if( settings.enable_transient ) {
-				dram0->setFIT( DRAM_1BIT, 1, 14.2 );
-				dram0->setFIT( DRAM_1WORD, 1, 1.4 );
-				dram0->setFIT( DRAM_1COL, 1, 1.4 );
-				dram0->setFIT( DRAM_1ROW, 1, 0.2 );
-				dram0->setFIT( DRAM_1BANK, 1, 0.8 );
-				dram0->setFIT( DRAM_NBANK, 1, 0.3 );
-				dram0->setFIT( DRAM_NRANK, 1, 0.9 );
-			}
-
-			if( settings.enable_permanent ) {
-				dram0->setFIT( DRAM_1BIT, 0, 18.6 );
-				dram0->setFIT( DRAM_1WORD, 0, 0.3 );
-				dram0->setFIT( DRAM_1COL, 0, 5.6 );
-				dram0->setFIT( DRAM_1ROW, 0, 8.2 );
-				dram0->setFIT( DRAM_1BANK, 0, 10.0 );
-				dram0->setFIT( DRAM_NBANK, 0, 1.4 );
-				dram0->setFIT( DRAM_NRANK, 0, 2.8 );
-			}
-		} else {
-			assert(0);
-		}
->>>>>>> cb3350b8a1ee2cc041e843e0d19ff5fbb07790a7
 
 		dimm0->addDomain( dram0, i );
 	}

@@ -106,11 +106,7 @@ GroupDomain_cube::GroupDomain_cube( const char *name, uint cube_model_t, uint64_
 	}
 }
 
-<<<<<<< HEAD
 int GroupDomain_cube::update( uint test_mode_t)
-=======
-int GroupDomain_cube::update( uint test_mode_t )
->>>>>>> cb3350b8a1ee2cc041e843e0d19ff5fbb07790a7
 {
 	int newfault = 0;
 	uint64_t location=0;

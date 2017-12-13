@@ -37,12 +37,10 @@ void parser(char *ininame)
 	settings.debug = pt.get<int>("Sim.debug");
 	settings.output_bucket_s = pt.get<uint64_t>("Sim.output_bucket_s");
 
-<<<<<<< HEAD
   settings.type = pt.get<int>("Org.type");
   settings.module = pt.get<int>("Org.module");
   settings.turning_point = pt.get<int>("Org.turning_point");//xiao:for PCM wear out
-=======
->>>>>>> cb3350b8a1ee2cc041e843e0d19ff5fbb07790a7
+  
 	settings.organization = pt.get<int>("Org.organization");
 	settings.chips_per_rank = pt.get<int>("Org.chips_per_rank");
 	settings.chip_bus_bits = pt.get<int>("Org.chip_bus_bits");
