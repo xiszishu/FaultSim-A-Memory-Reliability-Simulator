@@ -13,7 +13,10 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 #include "boost/cstdint.hpp"
 #include "Simulation.hh"
 #include "FaultDomain.hh"
+<<<<<<< HEAD
 #include "GroupDomain_dimm.hh"
+=======
+>>>>>>> cb3350b8a1ee2cc041e843e0d19ff5fbb07790a7
 #include <list>
 #include <iostream>
 #include <fstream>
@@ -23,7 +26,11 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 #include <inttypes.h>
 using namespace std;
 
+<<<<<<< HEAD
 Simulation::Simulation( uint64_t interval_t, uint64_t scrub_interval_t, double fit_factor_t , uint test_mode_t, bool debug_mode_t, bool cont_running_t, uint64_t output_bucket_t, uint64_t turning_point_t) :
+=======
+Simulation::Simulation( uint64_t interval_t, uint64_t scrub_interval_t, double fit_factor_t , uint test_mode_t, bool debug_mode_t, bool cont_running_t, uint64_t output_bucket_t) :
+>>>>>>> cb3350b8a1ee2cc041e843e0d19ff5fbb07790a7
 				  m_interval(interval_t)
 , m_scrub_interval(scrub_interval_t)
 , m_fit_factor(fit_factor_t)
@@ -31,7 +38,10 @@ Simulation::Simulation( uint64_t interval_t, uint64_t scrub_interval_t, double f
 , debug_mode(debug_mode_t)
 , cont_running(cont_running_t)
 , m_output_bucket(output_bucket_t)
+<<<<<<< HEAD
 , turning_point(turning_point_t)
+=======
+>>>>>>> cb3350b8a1ee2cc041e843e0d19ff5fbb07790a7
 {
 	m_iteration = 0;	// start at time zero
 
@@ -62,8 +72,11 @@ void Simulation::reset( void )
 
 	for( it = m_domains.begin(); it != m_domains.end(); it++ ) {
 		(*it)->reset();
+<<<<<<< HEAD
     GroupDomain_dimm* GD= (GroupDomain_dimm*)(*it);
     GD->reset_FIT(m_fit_factor);
+=======
+>>>>>>> cb3350b8a1ee2cc041e843e0d19ff5fbb07790a7
 	}
 }
 
@@ -119,7 +132,11 @@ void Simulation::simulate( uint64_t max_time, uint64_t n_sims, int verbose, std:
 	 * MONTE CARLO SIMULATION LOOP : THIS IS THE HEART OF FAULTSIM *
 	 **************************************************************/
 	for( uint64_t i = 0; i < n_sims; i++ ) {
+<<<<<<< HEAD
       //printf("sim time:%d\n",i);
+=======
+
+>>>>>>> cb3350b8a1ee2cc041e843e0d19ff5fbb07790a7
 		uint64_t failures = runOne( max_time, verbose, bin_length);
 		stat_total_sims++;
 
@@ -174,12 +191,20 @@ void Simulation::simulate( uint64_t max_time, uint64_t n_sims, int verbose, std:
 		p_undetected_cumulative += p_undetected;
 		undetectable_cumulative += fail_undetectable[jj];
 
+<<<<<<< HEAD
 		opfile << jj << "," << fail_time_bins[jj] << "," << fail_cumulative << "," << std::fixed << std::setprecision(6) << p_fail << "," << std::fixed << std::setprecision(6) << p_fail_cumulative << "," << fail_uncorrectable[jj] << "," << uncorrectable_cumulative << "," << std::fixed << std::setprecision(6) << p_uncorrected << "," << p_uncorrected_cumulative << "," << fail_undetectable[jj] << "," << undetectable_cumulative << "," <<std::fixed << std::setprecision(6) << p_undetected << "," << p_undetected_cumulative <<endl;
+=======
+		opfile << jj*12 << "," << fail_time_bins[jj] << "," << fail_cumulative << "," << std::fixed << std::setprecision(6) << p_fail << "," << std::fixed << std::setprecision(6) << p_fail_cumulative << "," << fail_uncorrectable[jj] << "," << uncorrectable_cumulative << "," << std::fixed << std::setprecision(6) << p_uncorrected << "," << p_uncorrected_cumulative << "," << fail_undetectable[jj] << "," << undetectable_cumulative << "," <<std::fixed << std::setprecision(6) << p_undetected << "," << p_undetected_cumulative <<endl;
+>>>>>>> cb3350b8a1ee2cc041e843e0d19ff5fbb07790a7
 	}
 
 	opfile.close();
 }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> cb3350b8a1ee2cc041e843e0d19ff5fbb07790a7
 uint64_t Simulation::runOne( uint64_t max_s, int verbose, uint64_t bin_length)
 {
 	// returns number of uncorrectable simulations
@@ -187,6 +212,7 @@ uint64_t Simulation::runOne( uint64_t max_s, int verbose, uint64_t bin_length)
 	// reset the domain states e.g. recorded errors for the simulated timeframe
 	reset();
 	uint64_t bin;
+<<<<<<< HEAD
   bool changed=0;
 
   //printf("runOne\n");
@@ -195,6 +221,12 @@ uint64_t Simulation::runOne( uint64_t max_s, int verbose, uint64_t bin_length)
   uint64_t turning_iteration = turning_point/ m_interval;
 
   //printf("turning_iteration:%d\n",turning_iteration);
+=======
+
+	// calculate number of iterations
+	uint64_t max_iterations = max_s / m_interval;
+
+>>>>>>> cb3350b8a1ee2cc041e843e0d19ff5fbb07790a7
 	// compute the ratio at which scrubbing needs to be performed
 	uint64_t scrub_ratio = m_scrub_interval / m_interval;
 	uint64_t errors =0;
@@ -203,6 +235,7 @@ uint64_t Simulation::runOne( uint64_t max_s, int verbose, uint64_t bin_length)
 	 *************************************************/
 	for( uint64_t iter = 0; iter < max_iterations; iter++ )
 	{
+<<<<<<< HEAD
       //printf("changed:%d\n",changed);
 		// loop through all fault domains and update
     if (iter>turning_iteration) changed=1;
@@ -223,6 +256,15 @@ uint64_t Simulation::runOne( uint64_t max_s, int verbose, uint64_t bin_length)
         // }
         int newfault=(*it)->update(test_mode);
 
+=======
+		// loop through all fault domains and update
+		list<FaultDomain*>::iterator it;
+
+		for( it = m_domains.begin(); it != m_domains.end(); it++ ) {
+
+			//Insert Faults Hierarchially: GroupDomain -> Lower Domains -> .. ; since (time between updates) << (Total Running Time), faults can be assumed to be inserted instantaneously
+			int newfault = (*it)->update(test_mode);
+>>>>>>> cb3350b8a1ee2cc041e843e0d19ff5fbb07790a7
 			uint64_t n_undetected = 0;
 			uint64_t n_uncorrected = 0;
 

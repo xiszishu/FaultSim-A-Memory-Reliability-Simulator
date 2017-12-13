@@ -34,7 +34,10 @@ DRAMDomain::DRAMDomain( char *name, uint32_t n_bitwidth, uint32_t n_ranks, uint3
 	gettimeofday (&tv, NULL);
 	gen.engine().seed(tv.tv_sec * 1000000 + (tv.tv_usec));
 
+<<<<<<< HEAD
   cout<<"FaultDomain name:"<<name<<endl;
+=======
+>>>>>>> cb3350b8a1ee2cc041e843e0d19ff5fbb07790a7
 	//gettimeofday (&tv, NULL);
 	eng32.seed(tv.tv_sec * 1000000 + (tv.tv_usec));
 
@@ -58,7 +61,11 @@ DRAMDomain::DRAMDomain( char *name, uint32_t n_bitwidth, uint32_t n_ranks, uint3
 
 	if( settings.verbose )
 	{
+<<<<<<< HEAD
       double gbits = ((double)(m_ranks*m_banks)*(double)(m_rows*m_cols*m_bitwidth))/((double)1024*1024*1024);
+=======
+		double gbits = ((double)(m_ranks*m_banks*m_rows*m_cols*m_bitwidth))/((double)1024*1024*1024);
+>>>>>>> cb3350b8a1ee2cc041e843e0d19ff5fbb07790a7
 
 		cout << "# -------------------------------------------------------------------\n";
 		cout << "# DRAMDomain(" << m_name << ")\n";
@@ -67,8 +74,12 @@ DRAMDomain::DRAMDomain( char *name, uint32_t n_bitwidth, uint32_t n_ranks, uint3
 		cout << "# rows " << m_rows << "\n";
 		cout << "# cols " << m_cols << "\n";
 		cout << "# bitwidth " << m_bitwidth << "\n";
+<<<<<<< HEAD
 		//cout << "# gbits " << gbits << "\n";
     printf("# gbits %.3lf\n",gbits);
+=======
+		cout << "# gbits " << gbits << "\n";
+>>>>>>> cb3350b8a1ee2cc041e843e0d19ff5fbb07790a7
 		cout << "# -------------------------------------------------------------------\n";
 	}
 }
@@ -115,6 +126,7 @@ const char *DRAMDomain::faultClassString( int i )
 
 	return "";
 }
+<<<<<<< HEAD
 void DRAMDomain::update_FIT(double time_s, double fit_factor)
 {
     static double second_writes=0.195*0.333; //64 GB PCM/write speed per second(V/T)
@@ -145,6 +157,14 @@ int DRAMDomain::update( uint test_mode_t)
 	int newfault0 = 0;
 	int newfault1 = 0;
 	newfault0 = FaultDomain::update(test_mode_t);
+=======
+
+int DRAMDomain::update( uint test_mode_t )
+{
+	int newfault0 = 0;
+	int newfault1 = 0;
+	newfault0 = FaultDomain::update(test_mode_t); 
+>>>>>>> cb3350b8a1ee2cc041e843e0d19ff5fbb07790a7
 
 	// Insert DRAM die faults
 	for( uint i = 0; i < DRAM_MAX; i++ ) {
@@ -155,7 +175,11 @@ int DRAMDomain::update( uint test_mode_t)
 				n_faults_transient++;
 				n_faults_transient_class[i]++;
 				generateRanges( i, true );
+<<<<<<< HEAD
 				newfault1 = 1;
+=======
+				newfault1 = 1;			
+>>>>>>> cb3350b8a1ee2cc041e843e0d19ff5fbb07790a7
 			}
 
 			random = gen();

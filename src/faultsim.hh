@@ -21,10 +21,14 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 
 // Memory organizations
 #define MO_DIMM 0
+<<<<<<< HEAD
 #define MO_3D   1
 
 // Device type
 #define TY_DRAM 0
 #define TY_PCM  1
+=======
+#define MO_3D 1
+>>>>>>> cb3350b8a1ee2cc041e843e0d19ff5fbb07790a7
 
 #endif /* FAULTSIM_HH_ */

@@ -13,7 +13,10 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 #include "BCHRepair_cube.hh"
 #include "DRAMDomain.hh"
 #include "Settings.hh"
+<<<<<<< HEAD
 #include <iostream>
+=======
+>>>>>>> cb3350b8a1ee2cc041e843e0d19ff5fbb07790a7
 
 extern struct Settings settings;
 
@@ -69,7 +72,11 @@ void BCHRepair_cube::repair( FaultDomain *fd, uint64_t &n_undetectable, uint64_t
 			if(frTemp.touched < frTemp.max_faults)
 			{
 				if( settings.debug ) {
+<<<<<<< HEAD
             std::cout << m_name << ": outer " << frTemp.toString() << "\n";
+=======
+					cout << m_name << ": outer " << frTemp.toString() << "\n";
+>>>>>>> cb3350b8a1ee2cc041e843e0d19ff5fbb07790a7
 				}
 
 				bit_shift=m_log_block_bits;	//ECC every 64 byte i.e 512 bit granularity
@@ -89,13 +96,21 @@ void BCHRepair_cube::repair( FaultDomain *fd, uint64_t &n_undetectable, uint64_t
 						FaultRange *fr1 = (*itRange1);
 
 						if( settings.debug ) {
+<<<<<<< HEAD
                 std::cout << m_name << ": inner " << fr1->toString() << " bit " << ii << "\n";
+=======
+							cout << m_name << ": inner " << fr1->toString() << " bit " << ii << "\n";
+>>>>>>> cb3350b8a1ee2cc041e843e0d19ff5fbb07790a7
 						}
 
 						if( fr1->touched < fr1->max_faults)
 						{
 							if(frTemp.intersects(fr1)) {
+<<<<<<< HEAD
                   if( settings.debug ) std::cout << m_name << ": INTERSECT " << n_intersections << "\n";
+=======
+								if( settings.debug ) cout << m_name << ": INTERSECT " << n_intersections << "\n";
+>>>>>>> cb3350b8a1ee2cc041e843e0d19ff5fbb07790a7
 
 								n_intersections++;
 
@@ -116,7 +131,11 @@ void BCHRepair_cube::repair( FaultDomain *fd, uint64_t &n_undetectable, uint64_t
 								// immediately move on to the next location
 								break;
 							} else {
+<<<<<<< HEAD
                   if( settings.debug ) std::cout << m_name << ": NONE " << n_intersections << "\n";
+=======
+								if( settings.debug ) cout << m_name << ": NONE " << n_intersections << "\n";
+>>>>>>> cb3350b8a1ee2cc041e843e0d19ff5fbb07790a7
 							}
 						}
 					}

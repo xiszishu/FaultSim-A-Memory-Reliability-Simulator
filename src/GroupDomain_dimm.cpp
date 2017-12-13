@@ -11,7 +11,10 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 */
 
 #include "GroupDomain_dimm.hh"
+<<<<<<< HEAD
 #include "DRAMDomain.hh"
+=======
+>>>>>>> cb3350b8a1ee2cc041e843e0d19ff5fbb07790a7
 #include <iostream>
 #include <stdlib.h>
 #include <ctime>
@@ -30,6 +33,7 @@ GroupDomain_dimm::GroupDomain_dimm( const char *name, uint64_t chips_t, uint64_t
 	gen.engine().seed(tv.tv_sec * 1000000 + (tv.tv_usec));
 }
 
+<<<<<<< HEAD
 int GroupDomain_dimm::update( uint test_mode_t)
 {
     return FaultDomain::update(test_mode_t);
@@ -55,6 +59,13 @@ void GroupDomain_dimm::reset_FIT(double fit_factor)
     }
 
 }
+=======
+int GroupDomain_dimm::update( uint test_mode_t )
+{
+	return FaultDomain::update(test_mode_t);
+}
+
+>>>>>>> cb3350b8a1ee2cc041e843e0d19ff5fbb07790a7
 void GroupDomain_dimm::setFIT( int faultClass, bool isTransient, double FIT )
 {
 }

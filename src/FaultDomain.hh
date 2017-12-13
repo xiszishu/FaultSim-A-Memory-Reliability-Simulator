@@ -34,7 +34,11 @@ public:
 	uint64_t getFaultCountUndetected( void );
 	uint64_t getFailedSimCount( void );
 
+<<<<<<< HEAD
     virtual int update(uint test_mode_t);	// perform one iteration ; Prashant: Changed the update to return a non-void value
+=======
+	virtual int update(uint test_mode_t);	// perform one iteration ; Prashant: Changed the update to return a non-void value
+>>>>>>> cb3350b8a1ee2cc041e843e0d19ff5fbb07790a7
 	virtual void repair( uint64_t &n_undetectable, uint64_t &n_uncorrectable );
 	virtual uint64_t fill_repl(void);
 	virtual void scrub( void );
@@ -46,12 +50,19 @@ public:
 	virtual void finalize( void );
 	// reset after each sim run
 	virtual void reset( void );
+<<<<<<< HEAD
     virtual void dumpState( void );
 
 	void setDebug( bool dbg );
 	void setFIT_TSV(bool isTransient_TSV, double FIT_TSV );
 	void update_cube();
     //void update_FIT(uint64_t time_s);
+=======
+	virtual void dumpState( void );
+	void setDebug( bool dbg );
+	void setFIT_TSV(bool isTransient_TSV, double FIT_TSV );
+	void update_cube();
+>>>>>>> cb3350b8a1ee2cc041e843e0d19ff5fbb07790a7
 
 	list<FaultDomain*> *getChildren( void );
 	virtual void resetStats( void );

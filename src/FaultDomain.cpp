@@ -142,6 +142,7 @@ void FaultDomain::init( uint64_t interval, uint64_t sim_seconds, double fit_fact
 		(*it)->init( interval, sim_seconds, fit_factor );
 	}
 }
+<<<<<<< HEAD
 // void FaultDomain::update_FIT(uint64_t time_s)
 // {
 //     static double second_writes=0.195; //64 GB PCM/write speed per second(V/T)
@@ -155,6 +156,9 @@ void FaultDomain::init( uint64_t interval, uint64_t sim_seconds, double fit_fact
 
 //     }
 // }
+=======
+
+>>>>>>> cb3350b8a1ee2cc041e843e0d19ff5fbb07790a7
 int FaultDomain::update(uint test_mode_t)
 {
 	int return_val=0;
@@ -162,7 +166,11 @@ int FaultDomain::update(uint test_mode_t)
 	list<FaultDomain*>::iterator it;
 	
 	for( it = m_children.begin(); it != m_children.end(); it++ ) {
+<<<<<<< HEAD
       temp=((*it)->update(test_mode_t));
+=======
+		temp=((*it)->update(test_mode_t));
+>>>>>>> cb3350b8a1ee2cc041e843e0d19ff5fbb07790a7
 		
 		if(temp==1){
 			return_val=1;

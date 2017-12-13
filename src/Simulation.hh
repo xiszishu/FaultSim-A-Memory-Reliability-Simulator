@@ -17,7 +17,11 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 
 class Simulation {
 public:
+<<<<<<< HEAD
     Simulation( uint64_t interval_t, uint64_t scrub_interval_t, double fit_factor_t, uint test_mode_t, bool debug_mode_t, bool cont_running_t, uint64_t output_bucket_t, uint64_t turning_point_t);
+=======
+	Simulation( uint64_t interval_t, uint64_t scrub_interval_t, double fit_factor_t, uint test_mode_t, bool debug_mode_t, bool cont_running_t, uint64_t output_bucket_t );
+>>>>>>> cb3350b8a1ee2cc041e843e0d19ff5fbb07790a7
 	void init( uint64_t max_s );
 	void reset( void );
 	void finalize( void );
@@ -38,8 +42,11 @@ protected:
     bool cont_running;
     uint64_t m_output_bucket;
 
+<<<<<<< HEAD
     uint64_t turning_point;//xiao:turning point
 
+=======
+>>>>>>> cb3350b8a1ee2cc041e843e0d19ff5fbb07790a7
 
 	uint64_t stat_total_failures, stat_total_sims, stat_sim_seconds;
 	

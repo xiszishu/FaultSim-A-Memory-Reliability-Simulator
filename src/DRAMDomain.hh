@@ -18,6 +18,7 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 #include <list>
 
 #include "FaultDomain.hh"
+<<<<<<< HEAD
 
 #define SLC_PCM_FIT 50 //xiao: MACRO for PCM_FIT
 #define MLC_PCM_FIT 100
@@ -25,6 +26,8 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 
 #define BER_DRAM_DDR3 4.2e-8
 
+=======
+>>>>>>> cb3350b8a1ee2cc041e843e0d19ff5fbb07790a7
 class FaultRange;
 
 // 32-bit random integers for determining fault locations
@@ -37,6 +40,7 @@ class DRAMDomain : public FaultDomain
 
 	void setFIT( int faultClass, bool isTransient, double FIT );
     void init( uint64_t interval, uint64_t sim_seconds, double fit_factor );
+<<<<<<< HEAD
     int update(uint test_mode_t);	// perform one iteration
 	void repair( uint64_t &n_undetectable, uint64_t &n_uncorrectable );
 	void scrub( void );
@@ -44,6 +48,13 @@ class DRAMDomain : public FaultDomain
     void update_FIT(double time_s, double fit_factor);//xiao
     void reset_FIT(double fit_factor);//xiao
 
+=======
+	int update(uint test_mode_t);	// perform one iteration
+	void repair( uint64_t &n_undetectable, uint64_t &n_uncorrectable );
+	void scrub( void );
+	virtual void reset( void );
+    
+>>>>>>> cb3350b8a1ee2cc041e843e0d19ff5fbb07790a7
 	list<FaultRange*> *getRanges( void );
 
 	void dumpState( void );

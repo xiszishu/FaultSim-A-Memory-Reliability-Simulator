@@ -30,7 +30,11 @@ class GroupDomain_cube : public GroupDomain
 
 	void setFIT( int faultClass, bool isTransient, double FIT );
 	void init( uint64_t interval, uint64_t max_s, double fit_factor );
+<<<<<<< HEAD
     int update( uint test_mode_t);	// perform one iteration
+=======
+	int update( uint test_mode_t );	// perform one iteration
+>>>>>>> cb3350b8a1ee2cc041e843e0d19ff5fbb07790a7
 	void setFIT_TSV(bool isTransient_TSV, double FIT_TSV );
 	protected:
 	void generateRanges( int faultClass ); // based on a fault, create all faulty address ranges
