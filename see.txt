@@ -1,0 +1,737 @@
+# --------------------------------------------------------------------------------
+# FAULTSIM (v0.1 alpha) - A Fast, Configurable Memory Resilience Simulator
+# (c) 2013-2015 Advanced Micro Devices Inc.
+# --------------------------------------------------------------------------------
+
+The selected config file is: configs/PCM.ini
+FaultDomain name:MODULE0.DRAM0
+# -------------------------------------------------------------------
+# DRAMDomain(MODULE0.DRAM0)
+# ranks 1
+# banks 8
+# rows 32768
+# cols 16384
+# bitwidth 4
+# gbits 16.000
+# -------------------------------------------------------------------
+chip addr_initial:0x1c858a0
+0 1 before:0.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+0 0 before:0.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+# ===================================================================
+# SIMULATION STARTS
+# ===================================================================
+
+chip addr:0x1c858a0
+0 1 before:0.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+0 0 before:0.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+Fchip addr:0x1c858a0
+0 1 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+0 0 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+Fchip addr:0x1c858a0
+0 1 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+0 0 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+Fchip addr:0x1c858a0
+0 1 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+0 0 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+Fchip addr:0x1c858a0
+0 1 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+0 0 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+Fchip addr:0x1c858a0
+0 1 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+0 0 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+Fchip addr:0x1c858a0
+0 1 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+0 0 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+Fchip addr:0x1c858a0
+0 1 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+0 0 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+Fchip addr:0x1c858a0
+0 1 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+0 0 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+Fchip addr:0x1c858a0
+0 1 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+0 0 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+Fchip addr:0x1c858a0
+0 1 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+0 0 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+Fchip addr:0x1c858a0
+0 1 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+0 0 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+Fchip addr:0x1c858a0
+0 1 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+0 0 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+Fchip addr:0x1c858a0
+0 1 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+0 0 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+Fchip addr:0x1c858a0
+0 1 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+0 0 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+Fchip addr:0x1c858a0
+0 1 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+0 0 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+Fchip addr:0x1c858a0
+0 1 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+0 0 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+Fchip addr:0x1c858a0
+0 1 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+0 0 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+Fchip addr:0x1c858a0
+0 1 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+0 0 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+Fchip addr:0x1c858a0
+0 1 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+0 0 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+Fchip addr:0x1c858a0
+0 1 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+0 0 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+Fchip addr:0x1c858a0
+0 1 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+0 0 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+Fchip addr:0x1c858a0
+0 1 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+0 0 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+Fchip addr:0x1c858a0
+0 1 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+0 0 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+Fchip addr:0x1c858a0
+0 1 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+0 0 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+Fchip addr:0x1c858a0
+0 1 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+0 0 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+Fchip addr:0x1c858a0
+0 1 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+0 0 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+Fchip addr:0x1c858a0
+0 1 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+0 0 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+Fchip addr:0x1c858a0
+0 1 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+0 0 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+Fchip addr:0x1c858a0
+0 1 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+0 0 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+Fchip addr:0x1c858a0
+0 1 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+0 0 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+Fchip addr:0x1c858a0
+0 1 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+0 0 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+Fchip addr:0x1c858a0
+0 1 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+0 0 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+Fchip addr:0x1c858a0
+0 1 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+0 0 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+Fchip addr:0x1c858a0
+0 1 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+0 0 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+Fchip addr:0x1c858a0
+0 1 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+0 0 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+Fchip addr:0x1c858a0
+0 1 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+0 0 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+Fchip addr:0x1c858a0
+0 1 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+0 0 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+Fchip addr:0x1c858a0
+0 1 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+0 0 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+Fchip addr:0x1c858a0
+0 1 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+0 0 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+Fchip addr:0x1c858a0
+0 1 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+0 0 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+Fchip addr:0x1c858a0
+0 1 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+0 0 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+Fchip addr:0x1c858a0
+0 1 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+0 0 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+Fchip addr:0x1c858a0
+0 1 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+0 0 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+Fchip addr:0x1c858a0
+0 1 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+0 0 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+Fchip addr:0x1c858a0
+0 1 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+0 0 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+Fchip addr:0x1c858a0
+0 1 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+0 0 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+Fchip addr:0x1c858a0
+0 1 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+0 0 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+Fchip addr:0x1c858a0
+0 1 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+0 0 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+Fchip addr:0x1c858a0
+0 1 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+0 0 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+Fchip addr:0x1c858a0
+0 1 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+0 0 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+Fchip addr:0x1c858a0
+0 1 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+0 0 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+Fchip addr:0x1c858a0
+0 1 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+0 0 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+Fchip addr:0x1c858a0
+0 1 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+0 0 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+Fchip addr:0x1c858a0
+0 1 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+0 0 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+Fchip addr:0x1c858a0
+0 1 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+0 0 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+Fchip addr:0x1c858a0
+0 1 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+0 0 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+Fchip addr:0x1c858a0
+0 1 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+0 0 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+Fchip addr:0x1c858a0
+0 1 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+0 0 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+Fchip addr:0x1c858a0
+0 1 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+0 0 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+Fchip addr:0x1c858a0
+0 1 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+0 0 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+Fchip addr:0x1c858a0
+0 1 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+0 0 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+Fchip addr:0x1c858a0
+0 1 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+0 0 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+Fchip addr:0x1c858a0
+0 1 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+0 0 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+Fchip addr:0x1c858a0
+0 1 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+0 0 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+Fchip addr:0x1c858a0
+0 1 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+0 0 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+Fchip addr:0x1c858a0
+0 1 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+0 0 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+Fchip addr:0x1c858a0
+0 1 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+0 0 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+Fchip addr:0x1c858a0
+0 1 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+0 0 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+Fchip addr:0x1c858a0
+0 1 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+0 0 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+Fchip addr:0x1c858a0
+0 1 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+0 0 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+Fchip addr:0x1c858a0
+0 1 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+0 0 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+Fchip addr:0x1c858a0
+0 1 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+0 0 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+Fchip addr:0x1c858a0
+0 1 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+0 0 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+Fchip addr:0x1c858a0
+0 1 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+0 0 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+Fchip addr:0x1c858a0
+0 1 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+0 0 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+Fchip addr:0x1c858a0
+0 1 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+0 0 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+Fchip addr:0x1c858a0
+0 1 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+0 0 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+Fchip addr:0x1c858a0
+0 1 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+0 0 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+Fchip addr:0x1c858a0
+0 1 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+0 0 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+Fchip addr:0x1c858a0
+0 1 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+0 0 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+Fchip addr:0x1c858a0
+0 1 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+0 0 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+Fchip addr:0x1c858a0
+0 1 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+0 0 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+Fchip addr:0x1c858a0
+0 1 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+0 0 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+Fchip addr:0x1c858a0
+0 1 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+0 0 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+Fchip addr:0x1c858a0
+0 1 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+0 0 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+Fchip addr:0x1c858a0
+0 1 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+0 0 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+Fchip addr:0x1c858a0
+0 1 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+0 0 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+Fchip addr:0x1c858a0
+0 1 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+0 0 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+Fchip addr:0x1c858a0
+0 1 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+0 0 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+Fchip addr:0x1c858a0
+0 1 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+0 0 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+Fchip addr:0x1c858a0
+0 1 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+0 0 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+Fchip addr:0x1c858a0
+0 1 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+0 0 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+Fchip addr:0x1c858a0
+0 1 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+0 0 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+Fchip addr:0x1c858a0
+0 1 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+0 0 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+Fchip addr:0x1c858a0
+0 1 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+0 0 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+Fchip addr:0x1c858a0
+0 1 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+0 0 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+Fchip addr:0x1c858a0
+0 1 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+0 0 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+Fchip addr:0x1c858a0
+0 1 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+0 0 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+Fchip addr:0x1c858a0
+0 1 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+0 0 before:25.000 after:25.000
+addr:0x1c85cb8 0x1c85cf0
+_______________
+F
+
+# ===================================================================
+# SIMULATION ENDS
+# ===================================================================
+
+[MODULE0.DRAM0] sims 100 failed_sims 100 rate_raw 1 FIT_raw 20833.3 rate_uncorr 1 FIT_uncorr 20833.3 rate_undet 1 FIT_undet 20833.3
+ Transient: 100 0 0 0 0 0 0 TSV 0 Permanent: 100 0 0 0 0 0 0 TSV 0
+[MODULE0] sims 100 failed_sims 100 rate_raw 1 FIT_raw 20833.3 rate_uncorr 1 FIT_uncorr 20833.3 rate_undet 1 FIT_undet 20833.3
+

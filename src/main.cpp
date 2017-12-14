@@ -189,12 +189,13 @@ GroupDomain* genModuleDIMM(uint num)
   //int2char(num);
   //strcat(num1,module_name);
 	dimm0 = new GroupDomain_dimm( module_name, settings.chips_per_rank, settings.banks, settings.data_block_bits );
+  //printf("addr_initial:%p\n",dimm0);
 
 	for( uint32_t i = 0; i < settings.chips_per_rank; i++ ) {
 		char buf[20];
 		sprintf( buf, "MODULE%d.DRAM%d",num, i );
 		DRAMDomain *dram0 = new DRAMDomain( buf, settings.chip_bus_bits, settings.ranks, settings.banks, settings.rows, settings.cols );
-
+    printf("chip addr_initial:%p\n",dram0);
     if (settings.type==TY_DRAM)
     {
         if (settings.faultmode == FM_UNIFORM_BIT )

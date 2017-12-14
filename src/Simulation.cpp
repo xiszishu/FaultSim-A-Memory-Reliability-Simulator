@@ -23,7 +23,7 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 #include <inttypes.h>
 using namespace std;
 
-Simulation::Simulation( uint64_t interval_t, uint64_t scrub_interval_t, double fit_factor_t , uint test_mode_t, bool debug_mode_t, bool cont_running_t, uint64_t output_bucket_t, uint64_t turning_point_t) :
+Simulation::Simulation( uint64_t interval_t, uint64_t scrub_interval_t, double fit_factor_t , uint test_mode_t, bool debug_mode_t, bool cont_running_t, uint64_t output_bucket_t, double turning_point_t) :
 				  m_interval(interval_t)
 , m_scrub_interval(scrub_interval_t)
 , m_fit_factor(fit_factor_t)
@@ -43,6 +43,7 @@ Simulation::Simulation( uint64_t interval_t, uint64_t scrub_interval_t, double f
 
 void Simulation::addDomain( FaultDomain *domain )
 {
+    //printf("added domain:%p\n",domain);
 	domain->setDebug( debug_mode );
 	m_domains.push_back( domain );
 }
@@ -61,9 +62,11 @@ void Simulation::reset( void )
 	list<FaultDomain*>::iterator it;
 
 	for( it = m_domains.begin(); it != m_domains.end(); it++ ) {
+      //printf("size:%d\n",m_domains.size());
+      //printf("addr:%p\n",(*it));
 		(*it)->reset();
     GroupDomain_dimm* GD= (GroupDomain_dimm*)(*it);
-    GD->reset_FIT(m_fit_factor);
+    GD->reset_FIT(m_interval,m_fit_factor);
 	}
 }
 
@@ -125,6 +128,7 @@ void Simulation::simulate( uint64_t max_time, uint64_t n_sims, int verbose, std:
 
 		uint64_t trans, perm;
 		getFaultCounts( &trans, &perm );
+    //printf("%d %d\n",trans,perm);
 		if( failures != 0 ) {
 			stat_total_failures++;
 			if( verbose ) cout << "F";  // uncorrected
@@ -205,7 +209,7 @@ uint64_t Simulation::runOne( uint64_t max_s, int verbose, uint64_t bin_length)
 	for( uint64_t iter = 0; iter < max_iterations; iter++ )
 	{
 
-      //printf("changed:%d\n",changed);
+      //printf("iter:%ld changed:%d max_iterations:%d\n",iter,changed,max_iterations);
 		// loop through all fault domains and update
     if (iter>turning_iteration) changed=1;
 
@@ -213,19 +217,21 @@ uint64_t Simulation::runOne( uint64_t max_s, int verbose, uint64_t bin_length)
     //printf("iteration:%ld\n",iter);
 		for( it = m_domains.begin(); it != m_domains.end(); it++ )
     {
-        //printf("size:%d\n",m_domains.size());
+        //printf("size:%d\n,",m_domains.size());
+        //printf("errors:%d\n",errors);
 			  //Insert Faults Hierarchially: GroupDomain -> Lower Domains -> .. ; since (time between updates) << (Total Running Time), faults can be assumed to be inserted instantaneously
 
       //xiao: insert setFIT here to adopt our module
       //to do: reset FIT for each simulation
-        // if (changed)
-        // {
-        //     GroupDomain_dimm* GD= (GroupDomain_dimm*)(*it);
-        //     GD->update_FIT((double)(iter-turning_iteration)*(double)(m_interval),m_fit_factor);
-        // }
+        if (changed)
+        {
+            GroupDomain_dimm* GD= (GroupDomain_dimm*)(*it);
+            //GD->update_FIT((double)(iter-turning_iteration)*(double)(m_interval),m_fit_factor);
+        }
         int newfault=(*it)->update(test_mode);
-			uint64_t n_undetected = 0;
-			uint64_t n_uncorrected = 0;
+        uint64_t n_undetected = 0;
+        uint64_t n_uncorrected = 0;
+        //printf("newfault:%d\n",newfault);
 
 			//Run the Repair function: This will check the correctability/ detectability of the fault(s); Repairing is also done instantaneously
 			if( newfault ) {

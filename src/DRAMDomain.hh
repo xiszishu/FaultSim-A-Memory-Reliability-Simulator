@@ -43,7 +43,7 @@ class DRAMDomain : public FaultDomain
 	void scrub( void );
 	virtual void reset( void );
     void update_FIT(double time_s, double fit_factor);//xiao
-    void reset_FIT(double fit_factor);//xiao
+    void reset_FIT(uint64_t interval,double fit_factor);//xiao
 
 	list<FaultRange*> *getRanges( void );
 

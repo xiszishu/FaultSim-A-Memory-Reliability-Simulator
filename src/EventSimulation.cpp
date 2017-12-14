@@ -64,6 +64,7 @@ uint64_t EventSimulation::runOne( uint64_t max_s, int verbose, uint64_t bin_leng
 	int devices = 0;
 	for( list<FaultDomain*>::iterator it1 = pChips->begin(); it1 != pChips->end(); it1++ )
 	{
+    reset();
 		DRAMDomain* pD = (DRAMDomain*)(*it1);
 		double period=0;
 		for(int errtype=0; errtype<DRAM_MAX*2; errtype++)

@@ -37,21 +37,23 @@ int GroupDomain_dimm::update( uint test_mode_t)
 void GroupDomain_dimm::update_FIT(double time_s,double fit_factor)
 {
     list<FaultDomain*> *pChips=&m_children;
-    //printf("size:%d\n",pChips->size());
+    printf("size:%d\n",pChips->size());
     for (list<FaultDomain*>::iterator it1=pChips->begin();it1!=pChips->end();it1++)
     {
         DRAMDomain* DD=(DRAMDomain*)(*it1);
+        printf("addr:%p\n",(*it1));
         DD->update_FIT(time_s,fit_factor);
     }
 }
-void GroupDomain_dimm::reset_FIT(double fit_factor)
+void GroupDomain_dimm::reset_FIT(uint64_t interval,double fit_factor)
 {
-    list<FaultDomain*> *pChips=&m_children;
+    //list<FaultDomain*> *pChips=&m_children;
     //printf("size:%d\n",pChips->size());
-    for (list<FaultDomain*>::iterator it1=pChips->begin();it1!=pChips->end();it1++)
+    for (list<FaultDomain*>::iterator it1=m_children.begin();it1!=m_children.end();it1++)
     {
         DRAMDomain* DD=(DRAMDomain*)(*it1);
-        DD->reset_FIT(fit_factor);
+        //printf("chip addr:%p\n",(*it1));
+        DD->reset_FIT(interval,fit_factor);
     }
 
 }

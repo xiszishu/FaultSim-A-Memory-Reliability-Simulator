@@ -125,22 +125,28 @@ void DRAMDomain::update_FIT(double time_s, double fit_factor)
     //double newFIT=time_s*second_writes*M_PCM/BER_DRAM_DDR3+SLC_PCM_FIT;
     double newFIT=time_s/36000+SLC_PCM_FIT;
     //printf("time:%f FIT:%f\n",time_s,newFIT);
-    setFIT(DRAM_1BIT,1,newFIT/2);
-    setFIT(DRAM_1BIT,0,newFIT/2);
+    setFIT(DRAM_1BIT,1,double(newFIT/2));
+    setFIT(DRAM_1BIT,0,double(newFIT/2));
     hrs_per_fault[DRAM_1BIT] = ((double)1000000000.0) / (transientFIT[DRAM_1BIT] * fit_factor);
     hrs_per_fault[DRAM_1BIT+DRAM_MAX] = ((double)1000000000.0) / (permanentFIT[DRAM_1BIT] * fit_factor);
 
 }
-void DRAMDomain::reset_FIT(double fit_factor)
+void DRAMDomain::reset_FIT(uint64_t interval,double fit_factor)
 {
-    //static double second_writes=0.195*0.333; //64 GB PCM/write speed per second(V/T)
+    //static double second_writes=0.195*0.333; //64 GB PCM/write speed per second(V/ T)
 
     //double newFIT=time_s*second_writes*M_PCM/BER_DRAM_DDR3+SLC_PCM_FIT;
-    //printf("time:%f FIT:%f\n",time_s,newFIT);
-    setFIT(DRAM_1BIT,1,SLC_PCM_FIT/2);
-    setFIT(DRAM_1BIT,0,SLC_PCM_FIT/2);
-    hrs_per_fault[DRAM_1BIT] = ((double)1000000000.0) / (transientFIT[DRAM_1BIT] * fit_factor);
-    hrs_per_fault[DRAM_1BIT+DRAM_MAX] = ((double)1000000000.0) / (permanentFIT[DRAM_1BIT] * fit_factor);
+    //printf("DRAM_1BIT:%d factor:%f FIT:%f\n",DRAM_1BIT,fit_factor,double(SLC_PCM_FIT/2));
+    double sec_per_hour = 60 * 60;
+    double interval_factor = (interval / sec_per_hour) / 1000000000.0;
+
+    setFIT(DRAM_1BIT,1,double(SLC_PCM_FIT/2));
+    setFIT(DRAM_1BIT,0,double(SLC_PCM_FIT/2));
+    transientFIT[DRAM_1BIT] = (double)1.0 - exp( -transientFIT[DRAM_1BIT] * fit_factor * interval_factor );
+		permanentFIT[DRAM_1BIT] = (double)1.0 - exp( -permanentFIT[DRAM_1BIT] * fit_factor * interval_factor );
+
+    //hrs_per_fault[DRAM_1BIT] = ((double)1000000000.0) / (transientFIT[DRAM_1BIT] * fit_factor);
+    //hrs_per_fault[DRAM_1BIT+DRAM_MAX] = ((double)1000000000.0) / (permanentFIT[DRAM_1BIT] * fit_factor);
 
 }
 int DRAMDomain::update( uint test_mode_t)
@@ -311,6 +317,15 @@ void DRAMDomain::scrub( void )
 
 void DRAMDomain::setFIT( int faultClass, bool isTransient, double FIT )
 {
+    // if( isTransient ) {
+    // printf("%d %d before:%.3f after:%.3f\n",faultClass,isTransient,transientFIT[faultClass],FIT);
+    // }
+    // else
+    // {
+    // printf("%d %d before:%.3f after:%.3f\n",faultClass,isTransient,permanentFIT[faultClass],FIT);
+    // }
+    // printf("addr:%p %p\n",&transientFIT[faultClass],&permanentFIT[faultClass]);
+    // printf("_______________\n");
 	if( isTransient ) {
 		transientFIT[faultClass] = FIT;
 	} else {
