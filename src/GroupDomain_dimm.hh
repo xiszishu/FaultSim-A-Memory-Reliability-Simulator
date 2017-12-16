@@ -31,7 +31,7 @@ class GroupDomain_dimm : public GroupDomain
 	void setFIT( int faultClass, bool isTransient, double FIT );
 	void init( uint64_t interval, uint64_t max_s, double fit_factor );
     int update( uint test_mode_t);	// perform one iteration
-    void update_FIT(double time_s,double fit_factor); //xiao:update_FIT
+    void update_FIT(double time_s,uint64_t interval,double fit_factor); //xiao:update_FIT
     void reset_FIT(uint64_t interval, double fit_factor);//xiao:
 	protected:
 	void generateRanges( int faultClass ); // based on a fault, create all faulty address ranges

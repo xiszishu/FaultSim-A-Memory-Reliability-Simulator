@@ -19,7 +19,7 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 
 #include "FaultDomain.hh"
 
-#define SLC_PCM_FIT 50 //xiao: MACRO for PCM_FIT
+#define SLC_PCM_FIT 1 //xiao: MACRO for PCM_FIT
 #define MLC_PCM_FIT 100
 #define M_PCM 2.33e-9
 
@@ -42,7 +42,7 @@ class DRAMDomain : public FaultDomain
 	void repair( uint64_t &n_undetectable, uint64_t &n_uncorrectable );
 	void scrub( void );
 	virtual void reset( void );
-    void update_FIT(double time_s, double fit_factor);//xiao
+    void update_FIT(double time_s,uint64_t interval, double fit_factor);//xiao
     void reset_FIT(uint64_t interval,double fit_factor);//xiao
 
 	list<FaultRange*> *getRanges( void );

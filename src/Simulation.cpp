@@ -226,7 +226,7 @@ uint64_t Simulation::runOne( uint64_t max_s, int verbose, uint64_t bin_length)
         if (changed)
         {
             GroupDomain_dimm* GD= (GroupDomain_dimm*)(*it);
-            //GD->update_FIT((double)(iter-turning_iteration)*(double)(m_interval),m_fit_factor);
+            GD->update_FIT((double)(iter-turning_iteration)*(double)(m_interval),m_interval,m_fit_factor);
         }
         int newfault=(*it)->update(test_mode);
         uint64_t n_undetected = 0;

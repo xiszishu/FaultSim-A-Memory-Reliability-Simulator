@@ -64,7 +64,7 @@ uint64_t EventSimulation::runOne( uint64_t max_s, int verbose, uint64_t bin_leng
 	int devices = 0;
 	for( list<FaultDomain*>::iterator it1 = pChips->begin(); it1 != pChips->end(); it1++ )
 	{
-    reset();
+      //reset();
 		DRAMDomain* pD = (DRAMDomain*)(*it1);
 		double period=0;
 		for(int errtype=0; errtype<DRAM_MAX*2; errtype++)
@@ -81,7 +81,7 @@ uint64_t EventSimulation::runOne( uint64_t max_s, int verbose, uint64_t bin_leng
             currtime=target;
             target+=m_interval;
             if (currtime>max_s) break;
-            pD->update_FIT((currtime-(double)turning_point),m_fit_factor);
+            pD->update_FIT((currtime-(double)turning_point),m_interval,m_fit_factor);
             period = -1*log(pD->gen())*pD->hrs_per_fault[errtype] * (60 * 60);
         }
         // if ((!changed)&&(period+currtime>(double)turning_point))
