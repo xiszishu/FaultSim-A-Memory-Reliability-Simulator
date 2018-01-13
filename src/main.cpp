@@ -287,12 +287,22 @@ GroupDomain* genModuleDIMM(uint num)
 		BCHRepair *bch0 = new BCHRepair( string("SECDED"), 1, 2, 4 );
 		dimm0->addRepair( bch0 );
 	} else if( settings.repairmode == 4 ) {
-		BCHRepair *bch1 = new BCHRepair( string("3EC4ED"), 3, 4, 4 );
+		BCHRepair *bch1 = new BCHRepair( string("2EC3ED"), 2, 3, 4 );
 		dimm0->addRepair( bch1 ); //Repair from Fault Domain
 	} else if( settings.repairmode == 5 ) {
-		BCHRepair *bch2 = new BCHRepair( string("6EC7ED"), 6, 7, 4 );
+		BCHRepair *bch2 = new BCHRepair( string("3EC4ED"), 3, 4, 4 );
 		dimm0->addRepair( bch2 );
-	} else {
+	} else if( settings.repairmode == 6 ) {
+      BCHRepair *bch3 = new BCHRepair( string("4EC5ED"), 4, 5, 4 );
+      dimm0->addRepair( bch3 ); //Repair from Fault Domain
+	} else if( settings.repairmode == 7 ) {
+      BCHRepair *bch4 = new BCHRepair( string("5EC6ED"), 5, 6, 4 );
+      dimm0->addRepair( bch4 );
+	} else if( settings.repairmode == 8 ) {
+      BCHRepair *bch5 = new BCHRepair( string("6EC7ED"), 6, 7, 4 );
+      dimm0->addRepair( bch5 );
+	}
+  else {
 		assert(0);
 	}
 

@@ -20,8 +20,3 @@ $(EXECUTABLE): $(OBJECTS)
 clean:
 	rm -rf faultsim
 	rm -rf src/*.o
-	cd doc && make clean
-
-doc:
-	cd doc && make
-

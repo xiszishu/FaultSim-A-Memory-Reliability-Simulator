@@ -70,9 +70,21 @@ void BCHRepair::repair( FaultDomain *fd, uint64_t &n_undetectable, uint64_t &n_u
 				{
 					bit_shift=2;	//SECDED will give ECC every 8 byte granularity, group by 4 locations in the fault range per chip
 				}
+        else if(m_n_correct == 2)
+				{
+            bit_shift=2;	//2EC3ED will give ECC every 8 byte granularity, group by 4 locations in the fault range per chip
+				}
 				else if(m_n_correct == 3)
 				{
 					bit_shift=4;	//3EC4ED will give ECC every 32 byte granularity, group by 16 locations in the fault range per chip
+				}
+        else if(m_n_correct == 4)
+				{
+            bit_shift=4;	//4EC5ED will give ECC every 32 byte granularity, group by 16 locations in the fault range per chip
+				}
+        else if(m_n_correct == 5)
+				{
+            bit_shift=4;	//5EC6ED will give ECC every 32 byte granularity, group by 16 locations in the fault range per chip
 				}
 				else if (m_n_correct == 6)
 				{
