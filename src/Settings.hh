@@ -26,6 +26,7 @@ public:
 	bool debug; 			// TODO document
 	uint64_t output_bucket_s; // Seconds per output histogram bucket
 
+    double scaler;//xiao:scaler for NVM
     uint turning_point;//xiao: turning point
   uint type;// xiao:memory type:0-DRAM, 1-PCM
   uint module; //xiao:number of modules

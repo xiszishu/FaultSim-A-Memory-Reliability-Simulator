@@ -65,8 +65,8 @@ void Simulation::reset( void )
       //printf("size:%d\n",m_domains.size());
       //printf("addr:%p\n",(*it));
 		(*it)->reset();
-    GroupDomain_dimm* GD= (GroupDomain_dimm*)(*it);
-    GD->reset_FIT(m_interval,m_fit_factor);
+    //GroupDomain_dimm* GD= (GroupDomain_dimm*)(*it);
+    //GD->reset_FIT(m_interval,m_fit_factor);
 	}
 }
 
@@ -211,7 +211,7 @@ uint64_t Simulation::runOne( uint64_t max_s, int verbose, uint64_t bin_length)
 
       //printf("iter:%ld changed:%d max_iterations:%d\n",iter,changed,max_iterations);
 		// loop through all fault domains and update
-    if (iter>turning_iteration) changed=1;
+    //if (iter>turning_iteration) changed=1;
 
 		list<FaultDomain*>::iterator it;
     //printf("iteration:%ld\n",iter);

@@ -38,6 +38,7 @@ void parser(char *ininame)
 	settings.output_bucket_s = pt.get<uint64_t>("Sim.output_bucket_s");
 
   settings.type = pt.get<int>("Org.type");
+  settings.scaler = pt.get<double>("Org.scaler");
   settings.module = pt.get<int>("Org.module");
   settings.turning_point = pt.get<int>("Org.turning_point");//xiao:for PCM wear out
   
