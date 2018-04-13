@@ -26,6 +26,7 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 #include "BCHRepair_cube.hh"
 #include "CubeRAIDRepair.hh"
 #include "BCHRepair.hh"
+#include "IECCRepair.hh"
 #include "Simulation.hh"
 #include "EventSimulation.hh"
 #include "Settings.hh"
@@ -219,13 +220,13 @@ GroupDomain* genModuleDIMM(uint num)
 
             if( settings.enable_permanent )
             {
-                dram0->setFIT( DRAM_1BIT, 0, 18.6*settings.scaler );
-                dram0->setFIT( DRAM_1WORD, 0, 0.3*settings.scaler );
-                dram0->setFIT( DRAM_1COL, 0, 5.6*settings.scaler );
-                dram0->setFIT( DRAM_1ROW, 0, 8.2*settings.scaler );
-                dram0->setFIT( DRAM_1BANK, 0, 10.0*settings.scaler );
-                dram0->setFIT( DRAM_NBANK, 0, 1.4*settings.scaler );
-                dram0->setFIT( DRAM_NRANK, 0, 2.8*settings.scaler );
+                dram0->setFIT( DRAM_1BIT, 0, 18.6 );
+                dram0->setFIT( DRAM_1WORD, 0, 0.3 );
+                dram0->setFIT( DRAM_1COL, 0, 5.6  );
+                dram0->setFIT( DRAM_1ROW, 0, 8.2  );
+                dram0->setFIT( DRAM_1BANK, 0, 10.0);
+                dram0->setFIT( DRAM_NBANK, 0, 1.4 );
+                dram0->setFIT( DRAM_NRANK, 0, 2.8 );
             }
         }
         else
@@ -302,6 +303,10 @@ GroupDomain* genModuleDIMM(uint num)
       BCHRepair *bch5 = new BCHRepair( string("6EC7ED"), 6, 7, 4 );
       dimm0->addRepair( bch5 );
 	}
+  else if( settings.repairmode == 10 ) {
+      IECCRepair *iecc = new IECCRepair( string("SECDED"), 1, 2, 4 );
+      dimm0->addRepair( iecc );
+  }
   else {
 		assert(0);
 	}

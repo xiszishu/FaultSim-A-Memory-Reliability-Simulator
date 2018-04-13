@@ -58,7 +58,7 @@ DRAMDomain::DRAMDomain( char *name, uint32_t n_bitwidth, uint32_t n_ranks, uint3
 
 	if( settings.verbose )
 	{
-      double gbits = ((double)(m_ranks*m_banks)*(double)(m_rows*m_cols*m_bitwidth))/((double)1024*1024*1024);
+      double gbits = ((double)(m_ranks*m_banks)*(double)(m_rows/1024.0*m_cols/1024.0*m_bitwidth))/1024;
 
 		cout << "# -------------------------------------------------------------------\n";
 		cout << "# DRAMDomain(" << m_name << ")\n";
@@ -121,9 +121,12 @@ void DRAMDomain::update_FIT(double time_s,uint64_t interval, double fit_factor)
 {
     double sec_per_hour = 60 * 60;
     double interval_factor = (interval / sec_per_hour) / 1000000000.0;
-    static double second_writes=0.195*0.333; //64 GB PCM/write speed per second(V/T)
+    static double second_writes=12.5/512; //64 GB PCM/write speed per second(V/T)
+    static double BER_per_cycle=6.25e-10;
+    static double FIT_per_BER=5.66e-3;
+    //based on DRAM ECC BER and raw BER
 
-    double newFIT=time_s*second_writes*M_PCM/BER_DRAM_DDR3+SLC_PCM_FIT;
+    double newFIT=time_s*second_writes*BER_per_cycle/BER_DRAM_DDR3*SLC_PCM_FIT+SLC_PCM_FIT;
     //double newFIT=time_s/36000+SLC_PCM_FIT;
     //printf("time:%f FIT:%f\n",time_s,newFIT);
     //setFIT(DRAM_1BIT,1,double(newFIT/2));
